@@ -1,0 +1,172 @@
+{
+  "repo": {
+    "name": {
+      "en-US": "NoMid F-Droid Repository"
+    },
+    "description": {
+      "en-US": "Official reproducible Android builds by NoMid (nomid.ws). Includes Prft Light Ctrl, an offline, account-free native Kotlin/Compose BLE studio controller for Profoto AirX & AirTTL lighting."
+    },
+    "icon": {
+      "en-US": {
+        "name": "/icons/repo_icon.png",
+        "sha256": "6c98104e3026e42917b26c9e412dd4d2704abc9af6ac3e3d690b92186a910c16",
+        "size": 8491
+      }
+    },
+    "address": "https://raw.githubusercontent.com/nomid-ws/fdroid/main/repo",
+    "timestamp": 1794606094000,
+    "categories": {
+      "Connectivity": {
+        "name": {
+          "en-US": "Connectivity"
+        }
+      },
+      "Multimedia": {
+        "name": {
+          "en-US": "Multimedia"
+        }
+      }
+    }
+  },
+  "packages": {
+    "app.prft.lightctrl": {
+      "metadata": {
+        "added": 1794606091000,
+        "categories": [
+          "Multimedia",
+          "Connectivity"
+        ],
+        "changelog": "https://github.com/nomid-ws/Prft_Lght_Ctrl/releases",
+        "issueTracker": "https://github.com/nomid-ws/Prft_Lght_Ctrl/issues",
+        "lastUpdated": 1794606091000,
+        "license": "GPL-3.0-or-later",
+        "sourceCode": "https://github.com/nomid-ws/Prft_Lght_Ctrl",
+        "screenshots": {
+          "phone": {
+            "en-US": [
+              {
+                "name": "/app.prft.lightctrl/en-US/phoneScreenshots/1.png",
+                "sha256": "8006ebffc9dced237730f7bbc0f8b92f45618fff11b2191a585c06befc292b43",
+                "size": 114113
+              },
+              {
+                "name": "/app.prft.lightctrl/en-US/phoneScreenshots/2.png",
+                "sha256": "27d83d77012bf788d188eed01edee2ea76676f71cd5b3b95e04c74f78f5809da",
+                "size": 175345
+              },
+              {
+                "name": "/app.prft.lightctrl/en-US/phoneScreenshots/3.png",
+                "sha256": "33ab41cf5ad6bf66c0d764ea3382b97b4b90b610e93b8302d40af030c2c77952",
+                "size": 167843
+              },
+              {
+                "name": "/app.prft.lightctrl/en-US/phoneScreenshots/4.png",
+                "sha256": "6a4626f8c11af937f05e744a977629a52e0499a6386684b5204e0b93a7b53f83",
+                "size": 164258
+              },
+              {
+                "name": "/app.prft.lightctrl/en-US/phoneScreenshots/5.png",
+                "sha256": "edd7956abb209973f07fb26bbb35084eed74b03d609be4809f9f38af05ead149",
+                "size": 161146
+              },
+              {
+                "name": "/app.prft.lightctrl/en-US/phoneScreenshots/6.png",
+                "sha256": "d79820bbd7f1279e5f5b634c54b7bfe4c9e61e686714304055c40190e37e76ff",
+                "size": 165254
+              },
+              {
+                "name": "/app.prft.lightctrl/en-US/phoneScreenshots/7.png",
+                "sha256": "c7341eb1adfa6a87bd29bc624b9fdf652955cbeae561dcee888076d1f775a891",
+                "size": 228334
+              }
+            ]
+          },
+          "sevenInch": {
+            "en-US": [
+              {
+                "name": "/app.prft.lightctrl/en-US/sevenInchScreenshots/1.png",
+                "sha256": "1885fa90261cb14003b3766ab535bee3cce2d717da36a63ea3bb249229b50c58",
+                "size": 111422
+              }
+            ]
+          }
+        },
+        "authorName": "NoMid",
+        "name": {
+          "en-US": "Prft Light Ctrl"
+        },
+        "summary": {
+          "en-US": "Offline, account-free BLE controller for Profoto AirX & AirTTL lights"
+        },
+        "description": {
+          "en-US": "Prft Light Ctrl is a privacy-first, 100% offline Bluetooth Low Energy (BLE) studio lighting controller built in Kotlin and Jetpack Compose for modern Android (Android 12–16+) phones and tablets — no account wall, no internet permission, and no location tracking.\n\nWhy Prft Light Ctrl:\n• Zero Account or Cloud Login: Opens straight to your lights — never get locked out in a basement studio or field shoot with no signal.\n• 100% Offline & Private: Requests zero INTERNET permission and uses Android 12+ neverForLocation BLE scanning (never asks for GPS/Location).\n• Reliable Android BLE Reconnects: Pinned-kit auto-reconnect, foreground keepalive when locking your phone, and hardware-filtered 1M scanning across modern Android phones.\n• Fast Studio Workflow: Saved Studio Scenes with offline JSON share, Named Group Roles (Key, Fill, Rim), Dual Power Readout (Watt-seconds & 1/1..1/512 fractions alongside 1–10 scale), Portrait + Landscape 6-fader console, thumb-zone FIRE button, and optional Volume Key FIRE trigger.\n\nHardware Compatibility:\n• Physically Verified (Direct BLE): Profoto B10X Plus/Pro, B10X, B10 Plus & B10 (flash + bi-color 3000–6500 K LED), Profoto A2 (100 Ws flash + modeling LED), Profoto Connect Pro (100-ch AirX 6-group A–F remote, Auto TTL/Manual, Per-Group TTL ratios, Sync/HSS/Global Shutter, AF-Assist, RF Power), and Profoto Connect.\n• Protocol-Compatible Direct BLE (Catalog-Mapped): AirX strobes/packs sharing core PUP opcodes (A10, B20/B30, D30, Pro-D3, Pro-B3, Pro-11, C1/C1 Plus).\n• Indirect Control via Connect Pro / Connect: Pre-Bluetooth Air strobes (B1, B1X, B2, D1, non-AirX D2) lack built-in BLE — control their groups over 2.4 GHz Air via a BLE-linked Connect Pro or Connect remote.\n• Not Supported: Cinema RGBWW/HSI/Gel/SFX/DMX fixtures (L600C/D/X, L1600D, ProPanel 3x2) and non-Bluetooth Air Remote TTL triggers.\n\nKnown Limitations:\n• Lighting controller only — does not capture smartphone camera photos or sync phone shutter to flash.\n• No firmware updates: Offline by design (0 INTERNET permission) and DFU/bootloader GATT characteristics are isolated to prevent mid-shoot bricking. Use Profoto's desktop USB updater (B10/B10X, A2, Connect) or the official Profoto Control app (portless Connect Pro) when updating firmware.\n• One active BLE app connection per fixture — close the official Profoto app before scanning.\n• Android 11 and older are not supported (supports modern Android 12–16+).\n\nIndependent GPL-3.0-or-later interoperability project; not affiliated with or endorsed by Profoto AB.\n"
+        },
+        "icon": {
+          "en-US": {
+            "name": "/app.prft.lightctrl/en-US/icon_Mz-YFjBGyEniW08IyNXl3Ad8xvSNs0WofiWQa8Uh894=.png",
+            "sha256": "333f98163046c849e25b4f08c8d5e5dc077cc6f48db345a87e25906bc521f3de",
+            "size": 9475
+          }
+        },
+        "preferredSigner": "16cd3fd6bf68205b6b50e710c5d757f9ffe65bebc038d2bca1bbf21f32caef38"
+      },
+      "versions": {
+        "d0fbc71a96ec578721f2db0218aec938db2c8433fb86a79a0133900b6130e165": {
+          "added": 1794606091000,
+          "file": {
+            "name": "/app.prft.lightctrl_7.apk",
+            "sha256": "d0fbc71a96ec578721f2db0218aec938db2c8433fb86a79a0133900b6130e165",
+            "size": 3245548
+          },
+          "manifest": {
+            "nativecode": [
+              "arm64-v8a",
+              "armeabi-v7a",
+              "x86",
+              "x86_64"
+            ],
+            "versionName": "1.5.1",
+            "versionCode": 7,
+            "features": [
+              {
+                "name": "android.hardware.bluetooth_le"
+              }
+            ],
+            "usesSdk": {
+              "minSdkVersion": 31,
+              "targetSdkVersion": 34
+            },
+            "signer": {
+              "sha256": [
+                "16cd3fd6bf68205b6b50e710c5d757f9ffe65bebc038d2bca1bbf21f32caef38"
+              ]
+            },
+            "usesPermission": [
+              {
+                "name": "android.permission.BLUETOOTH_SCAN"
+              },
+              {
+                "name": "android.permission.BLUETOOTH_CONNECT"
+              },
+              {
+                "name": "android.permission.FOREGROUND_SERVICE"
+              },
+              {
+                "name": "android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE"
+              },
+              {
+                "name": "android.permission.POST_NOTIFICATIONS"
+              },
+              {
+                "name": "app.prft.lightctrl.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+              }
+            ]
+          },
+          "whatsNew": {
+            "en-US": "v1.5.1 — Reliable Android BLE Discovery & Scan Recovery:\n- Fix BLE discovery on Samsung One UI and Android 12+ phones for Profoto A2, B10X, Connect & Connect Pro using hardware-filtered 1M ScanSettings (0xFDBB / 1d944db4, neverForLocation-compliant)\n- Add self-healing ScanCallback.onScanFailed fallback and scan status banners\n- Add Bluetooth-Off prompt card, scan auto-resume on foregrounding, OS GATT UUID hydration, and Broad BLE Scan toggle\n"
+          }
+        }
+      }
+    }
+  }
+}

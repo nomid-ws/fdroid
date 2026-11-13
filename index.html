@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <title>NoMid F-Droid Repository — Prft Light Ctrl</title>
+  <style>
+    :root {
+      --bg-canvas: #0F1115;
+      --bg-card: #181B22;
+      --bg-elevated: #222731;
+      --border-subtle: #2E3545;
+      --text-primary: #F8FAFC;
+      --text-secondary: #CBD5E1;
+      --text-tertiary: #94A3B8;
+      --accent-solid: #F8FAFC;
+      --accent-solid-fg: #0F1115;
+      --ok-badge-bg: #143326;
+      --ok-badge-fg: #6EE7B7;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      background: var(--bg-canvas);
+      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      min-height: 100dvh;
+      overflow-x: hidden;
+      -webkit-text-size-adjust: 100%;
+    }
+    a, button {
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 24px max(16px, env(safe-area-inset-right)) calc(32px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .hero {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .hero-top {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .app-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      flex-shrink: 0;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+    }
+    .title-group h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      margin-top: 4px;
+    }
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: var(--bg-elevated);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-subtle);
+    }
+    .badge-ok {
+      background: var(--ok-badge-bg);
+      color: var(--ok-badge-fg);
+      border-color: #1F513B;
+    }
+    .cta-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 60ms ease, background-color 120ms ease;
+      text-align: center;
+      width: 100%;
+    }
+    .btn:active {
+      transform: scale(0.985);
+    }
+    .btn:focus-visible {
+      outline: 2px solid var(--text-primary);
+      outline-offset: 2px;
+    }
+    .btn-primary {
+      background: var(--accent-solid);
+      color: var(--accent-solid-fg);
+      border: none;
+    }
+    .btn-secondary-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 560px) {
+      .btn-secondary-row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .btn-secondary {
+      background: var(--bg-elevated);
+      color: var(--text-primary);
+      border: 1.5px solid var(--border-subtle);
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .btn-primary:hover { background: #E2E8F0; }
+      .btn-secondary:hover { border-color: #64748B; }
+    }
+    .grid-two {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 680px) {
+      .grid-two {
+        grid-template-columns: 1.35fr 0.65fr;
+        align-items: stretch;
+      }
+    }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card h2 {
+      font-size: 1.0625rem;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+    .field-label {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .mono-box {
+      background: var(--bg-canvas);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 12px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      word-break: break-all;
+      line-height: 1.45;
+    }
+    .qr-card {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .qr-img {
+      width: 192px;
+      height: 192px;
+      max-width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--border-subtle);
+      padding: 12px;
+      background: #FFFFFF;
+    }
+    .caption {
+      font-size: 0.8125rem;
+      color: var(--text-tertiary);
+      max-width: 45ch;
+    }
+    .footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 8px;
+      color: var(--text-tertiary);
+      font-size: 0.8125rem;
+    }
+    .footer a {
+      color: var(--text-secondary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero" aria-labelledby="repo-title">
+      <div class="hero-top">
+        <img class="app-icon" src="repo/icons/repo_icon.png" alt="Prft Light Ctrl icon" width="64" height="64" />
+        <div class="title-group">
+          <h1 id="repo-title">NoMid F-Droid Repository</h1>
+          <p class="subtitle">Prft Light Ctrl v1.5.1 (Build 7) · Air-Gapped Native BLE Studio Controller</p>
+        </div>
+      </div>
+
+      <div class="badges">
+        <span class="badge badge-ok">0 INTERNET Permission</span>
+        <span class="badge">GPL-3.0-or-later</span>
+        <span class="badge">Android 12–16+ (API 31+)</span>
+        <span class="badge">Reproducible APK</span>
+      </div>
+
+      <div class="cta-stack">
+        <a class="btn btn-primary" href="fdroidrepos://raw.githubusercontent.com/nomid-ws/fdroid/main/repo?fingerprint=5B8E20619C48FD8F04A0174B4AE00D2C6AE24834B85EA77F57C5456AC9802532">
+          Add to F-Droid / Droid-ify
+        </a>
+        <div class="btn-secondary-row">
+          <a class="btn btn-secondary" href="https://f-droid.org/">
+            Download Official F-Droid
+          </a>
+          <a class="btn btn-secondary" href="obtainium://add/https://github.com/nomid-ws/Prft_Lght_Ctrl">
+            Add to Obtainium
+          </a>
+        </div>
+        <a class="btn btn-secondary" href="repo/app.prft.lightctrl_7.apk" download="Prft_Lght_Ctrl-v1.5.1-release.apk">
+          Download Direct APK (3.10 MB)
+        </a>
+      </div>
+    </section>
+
+    <div class="grid-two" id="setup-instructions">
+      <section class="card" aria-labelledby="manual-heading">
+        <h2 id="manual-heading">Setup Instructions</h2>
+        <p class="caption">1. Install <a href="https://f-droid.org/" style="color:var(--text-primary);">Official F-Droid (f-droid.org)</a>, Droid-ify, or Neo Store.<br/>2. Copy the Repository URL below and tap <strong>Settings &rarr; Repositories &rarr; +</strong> in F-Droid.</p>
+        <div>
+          <div class="field-label">Repository URL (with pinned key)</div>
+          <div class="mono-box" id="repo-url-text">https://raw.githubusercontent.com/nomid-ws/fdroid/main/repo?fingerprint=5B8E20619C48FD8F04A0174B4AE00D2C6AE24834B85EA77F57C5456AC9802532</div>
+        </div>
+        <button type="button" class="btn btn-secondary" id="copy-btn" onclick="copyRepoUrl()">
+          Copy Repository URL
+        </button>
+        <div>
+          <div class="field-label">Signing Certificate SHA-256</div>
+          <div class="mono-box">5B8E 2061 9C48 FD8F 04A0 174B 4AE0 0D2C 6AE2 4834 B85E A77F 57C5 456A C980 2532</div>
+        </div>
+      </section>
+
+      <section class="card qr-card" aria-labelledby="qr-heading">
+        <h2 id="qr-heading">Scan in F-Droid</h2>
+        <a href="https://github.com/nomid-ws/fdroid#setup-instructions">
+          <img class="qr-img" src="qr.svg" alt="Scan inside F-Droid (Settings -> Repositories -> + -> Scan QR) to add NoMid Repository" width="184" height="184" />
+        </a>
+        <p class="caption">In F-Droid, tap <strong>Settings &rarr; Repositories &rarr; + &rarr; Scan QR</strong>.</p>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <span>Signed by CN=NoMid, O=nomid.ws</span>
+      <div>
+        <a href="https://f-droid.org/">Official F-Droid</a> &nbsp;&middot;&nbsp;
+        <a href="https://github.com/nomid-ws/Prft_Lght_Ctrl">Source Code &amp; Releases</a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    function copyRepoUrl() {
+      var text = document.getElementById('repo-url-text').textContent.trim();
+      var btn = document.getElementById('copy-btn');
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () {
+          btn.textContent = 'Copied Repository URL';
+          setTimeout(function () { btn.textContent = 'Copy Repository URL'; }, 2000);
+        });
+      }
+    }
+  </script>
+</body>
+</html>

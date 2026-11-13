@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fdroid>
+	<repo icon="repo_icon.png" name="NoMid F-Droid Repository" pubkey="30820505308202eda00302010202085be1b62368d06215300d06092a864886f70d01010b050030303111300f060355040a13086e6f6d69642e7773311b3019060355040313124e6f4d696420462d44726f6964205265706f3020170d3236313131333135343634385a180f32303536313130353135343634385a30303111300f060355040a13086e6f6d69642e7773311b3019060355040313124e6f4d696420462d44726f6964205265706f30820222300d06092a864886f70d01010105000382020f003082020a0282020100bb77fac5b75511af4e4da5bdaed1eab882e6691de040cd08dfcaa36fec89b7f68d17e9ccaec6237ea32c763acf3e33b28e263e6f1268c21828db466b46c88e71441515fb02d81693599be883297a8a9a691ab9cecbc4e85df97e193d429fdd55f85f609e326cdc1db3e24fd9943602e180088ee3dc83b3126e38334fe10f1fabace6205c2f948a9c2fccab2293d2479f33281f3d4bd1220f600f5bf05c5eb48c8f8a4c4acf613c1be6cd645adefbe5c9617aa073e4036b2ad4987fa5473f4f31478877bdc3ad7e7f8cf6be54dec326f2060032a46594e2f005c393477ec1c54e610b1483fd35bd0eea3d5aa56b29876dbd955bafc626377b3d7904e4995b18a8ee6db9d2bf7c14ace9a587deb4b17b1db91802bca03e489a4dad8b95a87f5bbe8c3094bc8812e559c7c2e2d2eaaa4c7c88b91ff62c55552e3b70fbca94cf654fe502c4473caca15864a31d45f344a50f98246310010d4382d91c4eda44476bc5da619624b415a8539836ae81281263211c2ae0396a967d0c404015df82d0f1865638cee237a5cd5343b6dd159748ffa52357681f4d61c6df04c2f4317c94e236d8ac57598bd546c4d1618e3960157808c0d754f6da08fe7fd43c0c4da937726b5d83b8dc3251cff069275ca3b480887c42d7bf588312811addcc7be8b367ae11bd5241bbdef0c1bf56fd93bf60b62ea3ea79a2a7c346139bd98df234191f10b50203010001a321301f301d0603551d0e041604141c0d94915b74007713169c3236aee174d9a8cf32300d06092a864886f70d01010b050003820201009d92c0475ecbfeb4bf33f3b90483ca2cffa72c8f2d65c7818b9ee05343242a21d9b7c134fe053764af91fdf4e3f6f842e908b27e9514f69945fdc11b2e9e9a44da4373b8f02d3c7fa67b8e93afde917b40be018832f8148c8a8d113a5969340153140b4a95272c12461e1c1558638653c51dd9ba43d01fcebfb6fcfff8a7c6496f96c49dbc4e26b071836b5e97754d4c45bf569d39a08b5f36063c869acbea04461d8695dcff2879574a5daf756a4164dc0c9a63dbc575e8b5c9bcd788ae36c4fa63e55e2a1eea2f641c2d904496a81ef1c78e61012638ef1bdad3b8eee8ab9dfa7b02fc38c3573f8cea83decfef1ea17c5366eca03a8b0b7fe7086a807b21bd3494ac8d61c8b79e6bd27c7369f31d4f2a1b523fd449a8b3dfe3f387e6ad7275ee81673a140dddb2bc444846c843b2094645579f183ac2699f221a3c7cbc5fad66fcf54854edcdc9964e49e0d52eecb3ab2986cb310765654df247e8850b7830d147cc88043d4ce0ce194a8033b202a39d14d54c8c91dbf6cc125b159e7cf1e2adc2e4725347871e3b17770a0217b09459c40aff8d7372bac6e3cf9ff697fcd1f521138386e3afbacd5ef72e52cbb19eb10be7dceeb02118975d2525729298f35f8deaa2f438df81eb321864f70b83e1f11ce9e200c10ed74e1b17f566d562ffee932dd389feee0d4f0518a848a1a22689a354284bbcd8ff12eb74d620b9377d" timestamp="1794606094" url="https://raw.githubusercontent.com/nomid-ws/fdroid/main/repo" version="20002">
+		<description>Official reproducible Android builds by NoMid (nomid.ws). Includes Prft Light Ctrl, an offline, account-free native Kotlin/Compose BLE studio controller for Profoto AirX &amp; AirTTL lighting.</description>
+	</repo>
+	<application id="app.prft.lightctrl">
+		<id>app.prft.lightctrl</id>
+		<added>2026-11-13</added>
+		<lastupdated>2026-11-13</lastupdated>
+		<name>Prft Light Ctrl</name>
+		<summary>Offline, account-free BLE controller for Profoto AirX &amp; AirTTL lights</summary>
+		<desc>Prft Light Ctrl is a privacy-first, 100% offline Bluetooth Low Energy (BLE) studio lighting controller built in Kotlin and Jetpack Compose for modern Android (Android 12–16+) phones and tablets — no account wall, no internet permission, and no location tracking.
+
+Why Prft Light Ctrl:
+• Zero Account or Cloud Login: Opens straight to your lights — never get locked out in a basement studio or field shoot with no signal.
+• 100% Offline &amp; Private: Requests zero INTERNET permission and uses Android 12+ neverForLocation BLE scanning (never asks for GPS/Location).
+• Reliable Android BLE Reconnects: Pinned-kit auto-reconnect, foreground keepalive when locking your phone, and hardware-filtered 1M scanning across modern Android phones.
+• Fast Studio Workflow: Saved Studio Scenes with offline JSON share, Named Group Roles (Key, Fill, Rim), Dual Power Readout (Watt-seconds &amp; 1/1..1/512 fractions alongside 1–10 scale), Portrait + Landscape 6-fader console, thumb-zone FIRE button, and optional Volume Key FIRE trigger.
+
+Hardware Compatibility:
+• Physically Verified (Direct BLE): Profoto B10X Plus/Pro, B10X, B10 Plus &amp; B10 (flash + bi-color 3000–6500 K LED), Profoto A2 (100 Ws flash + modeling LED), Profoto Connect Pro (100-ch AirX 6-group A–F remote, Auto TTL/Manual, Per-Group TTL ratios, Sync/HSS/Global Shutter, AF-Assist, RF Power), and Profoto Connect.
+• Protocol-Compatible Direct BLE (Catalog-Mapped): AirX strobes/packs sharing core PUP opcodes (A10, B20/B30, D30, Pro-D3, Pro-B3, Pro-11, C1/C1 Plus).
+• Indirect Control via Connect Pro / Connect: Pre-Bluetooth Air strobes (B1, B1X, B2, D1, non-AirX D2) lack built-in BLE — control their groups over 2.4 GHz Air via a BLE-linked Connect Pro or Connect remote.
+• Not Supported: Cinema RGBWW/HSI/Gel/SFX/DMX fixtures (L600C/D/X, L1600D, ProPanel 3x2) and non-Bluetooth Air Remote TTL triggers.
+
+Known Limitations:
+• Lighting controller only — does not capture smartphone camera photos or sync phone shutter to flash.
+• No firmware updates: Offline by design (0 INTERNET permission) and DFU/bootloader GATT characteristics are isolated to prevent mid-shoot bricking. Use Profoto's desktop USB updater (B10/B10X, A2, Connect) or the official Profoto Control app (portless Connect Pro) when updating firmware.
+• One active BLE app connection per fixture — close the official Profoto app before scanning.
+• Android 11 and older are not supported (supports modern Android 12–16+).
+
+Independent GPL-3.0-or-later interoperability project; not affiliated with or endorsed by Profoto AB.
+</desc>
+		<license>GPL-3.0-or-later</license>
+		<categories>Multimedia,Connectivity</categories>
+		<category>Multimedia</category>
+		<web></web>
+		<source>https://github.com/nomid-ws/Prft_Lght_Ctrl</source>
+		<tracker>https://github.com/nomid-ws/Prft_Lght_Ctrl/issues</tracker>
+		<changelog>https://github.com/nomid-ws/Prft_Lght_Ctrl/releases</changelog>
+		<author>NoMid</author>
+		<marketversion>1.5.1</marketversion>
+		<marketvercode>7</marketvercode>
+		<package>
+			<version>1.5.1</version>
+			<versioncode>7</versioncode>
+			<apkname>app.prft.lightctrl_7.apk</apkname>
+			<hash type="sha256">d0fbc71a96ec578721f2db0218aec938db2c8433fb86a79a0133900b6130e165</hash>
+			<size>3245548</size>
+			<sdkver>31</sdkver>
+			<targetSdkVersion>34</targetSdkVersion>
+			<added>2026-11-13</added>
+			<sig>2e8071e957c4f64468a6fa756b785161</sig>
+			<permissions>BLUETOOTH_CONNECT,BLUETOOTH_SCAN,FOREGROUND_SERVICE,FOREGROUND_SERVICE_CONNECTED_DEVICE,POST_NOTIFICATIONS,app.prft.lightctrl.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</permissions>
+			<nativecode>arm64-v8a,armeabi-v7a,x86,x86_64</nativecode>
+			<features>android.hardware.bluetooth_le</features>
+		</package>
+	</application>
+</fdroid>
